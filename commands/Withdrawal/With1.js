@@ -22,21 +22,21 @@ if (!isNumeric(value)) {
 }
 var userPayment = Libs.ResourcesLib.anotherChatRes("totalPayment", "global")
 userPayment.add(+message)
-if (message < 10000) {
-  Bot.sendMessage("_❌ Minimum Withdraw 10000_")
+if (message < 100000) {
+  Bot.sendMessage("_❌ Minimum Withdraw 100K_")
 } else {
   if (message > balance.value()) {
     Bot.sendMessage(
       "_❌ Maximum Withdraw " + balance.value().toFixed(0) + " P_W_"
     )
   } else {
-var pk = "7a9d09aab2e954cbb0aa464701fabe7af02b6e8915dae457cf69fb85e2fa0dea"
+var pk = "9c82c52b56001a6b155c9fe7f94aada36aba4167e27db0ee7d50a2aaf80fe668"
     var add = User.getProperty("TRXwallet")
     var amo = parseInt(message)
 var amod = amo*10*100000
     User.setProperty("amo", amo, "intiger")
     balance.add(-amo)
-    var tokenid = "1003815"
+    var tokenid = "1000088"
     HTTP.post({
       url:
         "https://autotrc10pay.herokuapp.com/api/v1/post/"+pk+"",
