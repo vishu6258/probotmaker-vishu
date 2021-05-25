@@ -31,12 +31,12 @@ Bot.sendMessage(
 )
 
 Api.sendMessage({
-  chat_id: "@Helpeveryone54",
+  chat_id: "@atronftwsutopayment",
   text:"✅ Withdraw successful in bot @" +
     bot.name +
     "\n\n     User - @"+user.username+"\n💳 Amount: " +
     amo +
-    " WHXC \n👜 Wallet : " +
+    " ATRON \n👜 Wallet : " +
     add +
     "\n🕹️ ☘TxID : https://tronscan.org/#/transaction/" +
     tx +
@@ -44,7 +44,7 @@ Api.sendMessage({
   disable_web_page_preview: true
 })
 Bot.sendMessageToChatWithId(
-  1680884053,
+  1724473563,
   "✅ Withdraw successful in bot @" +
     bot.name +
     "\n\n💳 Amount: " +
