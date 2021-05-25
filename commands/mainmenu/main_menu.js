@@ -1,26 +1,26 @@
 /*CMD
-  command: /main
+  command: main_menu
   help: 
   need_reply: 
   auto_retry_time: 
   folder: mainmenu
   answer: 
   keyboard: 
-  aliases: 🔙back to menu, 🔙 back
+  aliases: 
 CMD*/
 
-if(request.data){
-var message_id = request.message.message_id
-var chat_id = request.message.chat.id
-
-Api.deleteMessage({
-chat_id :  chat_id,
-message_id : message_id
-})
-
+var userstat = User.getProperty("status");
+var referbonus = User.getProperty("referbonus");
+if (userstat=="member" | userstat =="administrator" | userstat =="creator"){
+if (referbonus == undefined){
+let refUser = Libs.ReferralLib.currentUser.attractedByUser()
+if (refUser){
+  var balanceref = Libs.ResourcesLib.anotherUserRes("balance", refUser.telegramid)
+  balanceref.add(1000)
+  Bot.sendMessageToChatWithId(refUser.chatId, "💲 You Earned +1000 WHXC \n\n*👨‍💼Your Referral :* "+"["+user.username+"]" + "(" + "tg://user?id=" + user.telegramid + ")")
+User.setProperty("referbonus", user.telegramid, "integer")}
 }
-var user = User.getProperty("status");
-if (user=="member" | user =="administrator" | user=="creator"){
+
 var balance = Libs.ResourcesLib.userRes("balance");
 var withdrawn = Libs.ResourcesLib.userRes("withdrawn");
 var ref = Libs.ResourcesLib.userRes("referral");
@@ -28,9 +28,8 @@ var msgid = User.getProperty("msgid")
 Api.deleteMessage({
 message_id : msgid
 })
-Bot.sendKeyboard("💵 Balance 💵,🏖 Refferal,\n🎁 Bonus 🎁,🌐 Withdraw,\n🔍Set wallet,📊 Statistics 📊,🎰 Task", "*📗 Refer and Earn ATRON/TWEET*")
+Bot.sendKeyboard("🌤 Balance,🏖 Refferal\n🌐 Withdraw,🔍Set wallet\n🎰 Task,📊 Statistics", "*🏮 Welcome To our Bot🏮 *")
 }
-if (user=="left"){
+if (userstat=="left"){
 Bot.runCommand("/start");
 }
-Bot.runCommand("reff")

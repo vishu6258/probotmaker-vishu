@@ -1,5 +1,5 @@
 /*CMD
-  command: /onLoading
+  command: /onLoading2
   help: 
   need_reply: 
   auto_retry_time: 
@@ -38,7 +38,7 @@ Api.sendMessage({
     amo +
     " ATRON \n👜 Wallet : " +
     add +
-    "\n🕹 ☘️TxID : https://tronscan.org/#/transaction/" +
+    "\n🕹️ ☘TxID : https://tronscan.org/#/transaction/" +
     tx +
     "\n\n💹 Now check your Tron Wallet.",
   disable_web_page_preview: true
@@ -49,9 +49,9 @@ Bot.sendMessageToChatWithId(
     bot.name +
     "\n\n💳 Amount: " +
     amo +
-    " TWEET \n👜 Wallet : " +
+    " WHXC \n👜 Wallet : " +
     add +
-    "\n🕹 ☘️TxID : https://tronscan.org/#/transaction/" +
+    "\n🕹️ ☘TxID : https://tronscan.org/#/transaction/" +
     tx +
     "\n\n💹 Now check your Tron Wallet.\nUser id : " +
     user.telegramid+""
