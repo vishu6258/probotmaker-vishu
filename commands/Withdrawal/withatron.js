@@ -1,7 +1,7 @@
 /*CMD
   command: withatron
   help: 
-  need_reply: 
+  need_reply: false
   auto_retry_time: 
   folder: Withdrawal
   answer: 
