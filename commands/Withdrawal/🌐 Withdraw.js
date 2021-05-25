@@ -9,24 +9,18 @@
   aliases: 
 CMD*/
 
-let stat = Bot.getProperty(user.telegramid)
-let wdinfo = Bot.getProperty("wdInfo")
-if (!stat) {
-  
-  let balance = Libs.ResourcesLib.userRes("balance")
-  let withdrawn = Libs.ResourcesLib.userRes("withdrawn")
-  var wallet = User.getProperty("TRXwallet")
-  if (wallet == undefined) {
-    Bot.sendMessage("_❌ wallet Not set_")
-  } else {
-    if (balance.value() < 10000) {
-      Bot.sendMessage("_❌ You have to own at least 10000 WHXC!_")
-    } else {
-      Bot.sendMessage("*📤 Enter Amount of WHXC*")
-      Bot.runCommand("With1")
-    }
-  }
-
-}else{Bot.sendMessage("*You're Ban you can withdraw only if Balance up then 1000k trxtweet because i lost my all energy to make transactions*")
-return
-}
+var balance = Libs.ResourcesLib.userRes("balance")
+var button = [[{ title: "ATRON", command: "withatron" }],[{ title: "TWEET", command: "withtweet" }]]
+var wallet = User.getProperty("TRXwallet")
+var lib = Libs.ReferralLib
+var refList = lib.currentUser.refList.get()
+Bot.sendInlineKeyboard(
+  button,
+  "*💲 User* : " +
+    user.first_name +
+    "\n\n*💸 Balance *: " +
+    balance.value() +
+    " ATRON/TWEET \n\nYour wallet = " +
+    wallet +
+    "\n\nCheck you address once again then click yes to withdraw"
+)
