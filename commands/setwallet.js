@@ -4,7 +4,7 @@
   need_reply: true
   auto_retry_time: 
   folder: 
-  answer: _✏️Send your WHXC Address from TronLink Pro_
+  answer: _✏️Send your ATRON OR TWEET Address from TronLink Pro_
   keyboard: 
   aliases: 
 CMD*/
